@@ -1,21 +1,26 @@
 import Estructuras.*;
 import java.util.Scanner;
 
+/**
+ * Clase que ejecuta el método principal del programa
+ * 
+ * @author Luis Fernando Quintana López
+ * @author Erick Xavier Martinez Briones
+ * @version 1.0.0
+ * @since 2026
+ * 
+ */
+
 public class Main {
 
-    public void meter(PiCoLa<String> pc, String elemento){
-        pc.meter(elemento);
-    }
-    public void sacar(PiCoLa<String> pc){
-        pc.sacar();
-    }
-    public void mira(PiCoLa<String> pc){
-        pc.estaVacia();
-    }
-    public void devolverTamanio(PiCoLa<String> pc){
-        pc.devolverTamanio();
-    }
-
+    /**
+     * Ejecuta una operación sobre una estructura PiCoLa, para lo cúal asocia cada operación a un
+     * número entero.
+     *
+     * @param sc el objeto Scanner utilizado para leer la entrada del usuario
+     * @param pc la estructura PiCoLa sobre la cual se realizará la operación
+     * @param operacion el código entero que indica la operación a ejecutar
+     */
     public static void ejecutarOperacion(Scanner sc, PiCoLa<String> pc, int operacion){
         switch (operacion) {
             case 1:
@@ -81,21 +86,31 @@ public class Main {
 
 
     }
+
+    /** 
+     * Método principal del programa que permite al usuario interactuar con pilas/colas
+     * @param args argumentos recibidos por terminal
+    */
     public static void main(String[] args) {
+        /* Constantes */
         String ROJO = "\u001B[31m";
         String RESET = "\u001B[0m";
         String VERDE = "\u001B[32m";
 
+        /* Inicializando variables */
         Scanner sc = new Scanner(System.in);
 
         int estructuraSeleccionada;
+        int operacionSeleccionada;
+
         PiCoLa<String> pc = new Pila<String>();
 
+
+        /* Inicio del programa */
         System.out.println("Bienvenido usuario");
         System.out.println("");
 
-        int operacionSeleccionada;
-
+        /* Obteniendo la elección del usuario: pila/cola */
         while (true) { 
             System.out.println("¿Que estructura de datos quieres usar?");
             System.out.println("(1) pila");
@@ -117,14 +132,13 @@ public class Main {
             }
             System.out.println("");
         }
-
-        
-
         if (estructuraSeleccionada == 1) {
             pc = new Pila<String>();
         } else {
             pc = new Cola<String>();
         }
+
+        /* Mostrando menu al usuario y procesando su solicitud */
         while (true){
             System.out.println("");
             System.out.println(VERDE + ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::" + RESET);
@@ -138,6 +152,7 @@ public class Main {
             System.out.println("(6) salir");
             System.out.print(">");
 
+            /* Validando los datos de entrada */
             if (sc.hasNextInt()) {
                 operacionSeleccionada = sc.nextInt();
                 sc.nextLine();
