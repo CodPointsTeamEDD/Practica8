@@ -1,4 +1,4 @@
-package estructuras;
+package Estructuras;
 
 /**
  * Interfaz {@code PiCola<T>}

@@ -1,3 +1,5 @@
+package Estructuras;
+
 /**
  * Clase concreta {@code Cola<T>}
  * Implementa la interfaz {@link PiCola<T>}
