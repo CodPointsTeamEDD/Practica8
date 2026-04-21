@@ -148,7 +148,7 @@ public class Main {
             System.out.println("(2) sacar");
             System.out.println("(3) mira");
             System.out.println("(4) es vacía");
-            System.out.println("(5) devolver longitud");
+            System.out.println("(5) devolver tamaño");
             System.out.println("(6) salir");
             System.out.print(">");
 
